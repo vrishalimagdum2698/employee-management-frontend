@@ -1,0 +1,29 @@
+<div class="col-md-6 offset-md-3">
+  @if(update()){
+    <h2 class="text-center">Update Employee</h2>
+  }@else{  
+    <h2 class="text-center">Create Employee</h2>
+  }
+  <form>
+    <div class="form-group pb-3">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" class="form-control" [(ngModel)]="employee().firstName" name="firstName" required>
+    </div>
+    <div class="form-group pb-3">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" class="form-control" [(ngModel)]="employee().lastName" name="lastName" required>
+    </div>
+    <div class="form-group pb-3">
+      <label for="email">Email:</label>
+      <input type="email" id="email" class="form-control" [(ngModel)]="employee().emailId" name="emailId" required>
+    </div>
+
+    @if(update()){
+    <button (click)="onUpdate()" class="btn btn-primary">Update</button>
+    }
+    @else{
+      <button (click)="onSubmit()" class="btn btn-primary">Submit</button>
+    }
+  </form>
+
+</div>
